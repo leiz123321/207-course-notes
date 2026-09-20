@@ -26,9 +26,9 @@ public class FirstLetters {
      */
     public static String firstLetters(String words) {
         // TODO: complete
-        string firstLetters = "";
-        for (string word : words.split(" ")){
-            firstLetter += word.charAt(0);
+        StringBuilder firstLetters = "";
+        for (String word : words.split(" ")){
+            firstLetters += word.charAt(0);
         }
         return firstLetters;
     }

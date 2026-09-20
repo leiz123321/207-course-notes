@@ -33,7 +33,7 @@ public class OddSum {
         //       (e.g. arr[i] gives you the item at index i).
         int sum = 0;
         for (int i = 1; i < arr.length; i += 2) {
-            sum += arr[i]
+            sum += arr[i];
         }
         return sum;
     }
