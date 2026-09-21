@@ -23,7 +23,7 @@ public class DigitSum {
     public static int digitSum(int n) {
         int sum = 0;
         if (n < 0) {
-            n = -n
+            n = -n;
         }
         while (n > 0) {
             sum += n % 10;
