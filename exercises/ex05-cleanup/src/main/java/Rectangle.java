@@ -14,13 +14,20 @@ public class Rectangle {
 
     /**
      * scales the rectangle
+     *
      * @param factor
      */
     public void scale(double factor) {
-      width *= factor;
-      height *= factor;
+        width *= factor;
+        height *= factor;
     }
 
+    /**
+     * tells you if is larger than
+     *
+     * @param another rectangle
+     * @return a boolean
+     */
     public boolean isLargerThan(Rectangle other) {
         return area() > other.area();
     }
