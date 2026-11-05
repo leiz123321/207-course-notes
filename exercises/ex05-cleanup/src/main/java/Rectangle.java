@@ -1,5 +1,5 @@
 /**
- * Exercise 5
+ * Exercise 5.
  */
 
 public class Rectangle {
@@ -9,15 +9,18 @@ public class Rectangle {
 
   /**
    * Createes a rectangle with specified width and height.
-   * @param width
-   * @param height
+   *
+   * @param width of rectangle
+   * @param height of rectangle
    */
   public Rectangle(double width, double height) {
     this.width = width;
     this.height = height;
   }
+
   /**
    * Gives the area of the rectangle.
+   *
    * @return a double
    */
   public double area() {
@@ -27,7 +30,7 @@ public class Rectangle {
   /**
    * scales the rectangle.
    *
-   * @param factor
+   * @param factor by which to scale the rectangle
    */
   public void scale(double factor) {
     width *= factor;

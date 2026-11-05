@@ -20,6 +20,8 @@ import javax.swing.SwingUtilities;
  * comparing with the picture. See "4.5 Testing UI code" for why UI layout is
  * usually verified by eye rather than by a test.
  *
+ * blah
+ *
  * Relevant reading: 4.1 Creating and showing a window, 4.2 Java Swing visual
  * components.
  */
