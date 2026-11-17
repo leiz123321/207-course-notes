@@ -78,6 +78,24 @@ public class NumberTriangle {
   }
 
   /**
+   * Returns the subtree stored at the right of this NumberTriangle.
+   *
+   * @return the right subtree
+   */
+  public NumberTriangle getRight() {
+    return right;
+  }
+
+  /**
+   * Returns the subtree stored at the left of this NumberTriangle.
+   *
+   * @return the left subtree
+   */
+  public NumberTriangle getLeft() {
+    return left;
+  }
+
+  /**
    * Reports whether this NumberTriangle has no children.
    *
    * @return true if and only if both children are null
@@ -109,7 +127,13 @@ public class NumberTriangle {
     //       value of wherever you ended up. An empty path means "stay here".
     //       Hint: String#charAt(int) and String#length() are all you need for the
     //       iterative version; a recursive version can use String#substring(1).
-    return 0;
+    char[] pathArray = path.toCharArray();
+    NumberTriangle currentNumTri = this;
+    for (char step : pathArray) {
+        if (step == 'l') {currentNumTri = currentNumTri.getLeft()}
+        else {currentNumTri = currentNumTri.getRight()}
+    }
+    return currentNumTri.getRoot();
   }
 
   /**
