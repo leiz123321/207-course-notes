@@ -18,37 +18,53 @@ import java.util.Iterator;
  */
 public class Week implements Iterable<String> {
 
-  private final String[] days = {
-    "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
-  };
+    private final String[] days = {
+            "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
+    };
 
-  /**
-   * Returns the day at the given index (0 = Sunday ... 6 = Saturday).
-   *
-   * @param i the index
-   * @return the day name at that index
-   */
-  public String getDay(int i) {
-    return days[i];
-  }
-
-  @Override
-  public Iterator<String> iterator() {
-    // TODO: return an Iterator<String> that yields days[0], days[1], ... in
-    //       order. The usual approach is a small (nested) class that implements
-    //       Iterator<String>:
-    //         - hasNext() reports whether any days remain;
-    //         - next() returns the next day and advances, or throws
-    //           java.util.NoSuchElementException if none remain.
-    //       Replace the empty iterator below with an instance of your class.
-    return Collections.emptyIterator();
-  }
-
-  /** Prints each day of the week, one per line. */
-  public static void main(String[] args) {
-    Week week = new Week();
-    for (String day : week) {
-      System.out.println(day);
+    /**
+     * Returns the day at the given index (0 = Sunday ... 6 = Saturday).
+     *
+     * @param i the index
+     * @return the day name at that index
+     */
+    public String getDay(int i) {
+        return days[i];
     }
-  }
+
+    @Override
+    public Iterator<String> iterator() {
+        return new WeekIterator(new Week());
+    }
+
+    /** Prints each day of the week, one per line. */
+    public static void main(String[] args) {
+        Week week = new Week();
+        for (String day : week) {
+            System.out.println(day);
+        }
+    }
+}
+
+class WeekIterator implements Iterator<String> {
+
+    private final String[] days = {
+            "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
+    };
+    int current;
+
+
+    WeekIterator(Week week){
+        current = 0;
+    }
+
+    @Override
+    public boolean hasNext() {
+        return current < 7;
+    }
+
+    @Override
+    public String next() {
+        return days[current++];
+    }
 }
