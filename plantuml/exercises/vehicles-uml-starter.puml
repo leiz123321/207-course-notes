@@ -25,10 +25,11 @@ interface Chargeable {
 abstract class Vehicle {
   # make: String
   + Vehicle(make : String)
-  + maxSpeed() : int
+  + maxSpeed() : int{abstract}
 }
 
 class Car {
++ maxSpeed() : int
 }
 
 class ElectricCar {
