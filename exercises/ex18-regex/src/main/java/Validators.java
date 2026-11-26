@@ -10,43 +10,40 @@
  */
 public class Validators {
 
-  /**
-   * Returns whether {@code input} looks like an email address: one or more
-   * "local" characters (letters, digits, or any of {@code . _ % + -}), then an
-   * {@code @}, then a domain of letters/digits/{@code . -}, then a {@code .} and
-   * a top-level domain of at least two letters.
-   *
-   * @param input the string to test
-   * @return true iff input is a valid email address
-   */
-  public static boolean isEmail(String input) {
-    // TODO: return input.matches("...") with an appropriate pattern.
-    return false;
-  }
+    /**
+     * Returns whether {@code input} looks like an email address: one or more
+     * "local" characters (letters, digits, or any of {@code . _ % + -}), then an
+     * {@code @}, then a domain of letters/digits/{@code . -}, then a {@code .} and
+     * a top-level domain of at least two letters.
+     *
+     * @param input the string to test
+     * @return true iff input is a valid email address
+     */
+    public static boolean isEmail(String input) {
+        return input.matches("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]\\.[a-zA-Z]{2,}");
+    }
 
-  /**
-   * Returns whether {@code input} is a phone number of the form
-   * {@code NNN-NNN-NNNN} (three digits, a dash, three digits, a dash, four
-   * digits).
-   *
-   * @param input the string to test
-   * @return true iff input matches the phone-number pattern
-   */
-  public static boolean isPhoneNumber(String input) {
-    // TODO
-    return false;
-  }
+    /**
+     * Returns whether {@code input} is a phone number of the form
+     * {@code NNN-NNN-NNNN} (three digits, a dash, three digits, a dash, four
+     * digits).
+     *
+     * @param input the string to test
+     * @return true iff input matches the phone-number pattern
+     */
+    public static boolean isPhoneNumber(String input) {
+        return input.matches("\\d{3}-\\d{3}-\\d{4}");
+    }
 
-  /**
-   * Returns whether {@code input} is a legal Java variable name: it starts with
-   * a letter, underscore, or dollar sign, followed by any number of letters,
-   * digits, underscores, or dollar signs.
-   *
-   * @param input the string to test
-   * @return true iff input is a valid Java identifier
-   */
-  public static boolean isJavaVariableName(String input) {
-    // TODO
-    return false;
-  }
+    /**
+     * Returns whether {@code input} is a legal Java variable name: it starts with
+     * a letter, underscore, or dollar sign, followed by any number of letters,
+     * digits, underscores, or dollar signs.
+     *
+     * @param input the string to test
+     * @return true iff input is a valid Java identifier
+     */
+    public static boolean isJavaVariableName(String input) {
+        return input.matches("^[a-zA-Z_$][a-zA-Z0-9_$]$");
+    }
 }
