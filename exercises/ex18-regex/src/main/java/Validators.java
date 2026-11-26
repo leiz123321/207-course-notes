@@ -20,7 +20,7 @@ public class Validators {
      * @return true iff input is a valid email address
      */
     public static boolean isEmail(String input) {
-        return input.matches("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]\\.[a-zA-Z]{2,}");
+        return input.matches("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}");
     }
 
     /**
@@ -44,6 +44,6 @@ public class Validators {
      * @return true iff input is a valid Java identifier
      */
     public static boolean isJavaVariableName(String input) {
-        return input.matches("^[a-zA-Z_$][a-zA-Z0-9_$]$");
+        return input.matches("^[a-zA-Z_$]+[a-zA-Z0-9_$]*$");
     }
 }
