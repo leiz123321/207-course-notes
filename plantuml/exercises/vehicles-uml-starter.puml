@@ -29,15 +29,10 @@ abstract class Vehicle {
 }
 
 class Car {
-  + Vehicle(make : String)
-  + maxSpeed() : int
 }
 
 class ElectricCar {
   - batteryLevel : int
-  + Vehicle(make : String)
-  + maxSpeed() : int
-  + charge() : void
 }
 
 Chargeable <|.. ElectricCar
